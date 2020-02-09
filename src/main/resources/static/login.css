@@ -1,3 +1,42 @@
-p {
-	margin: auto 0
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.app{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: #717171;
+	color: white;
+}
+
+.login-form {
+	height: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-form > * {
+	width:100%;
+	max-width:500px;
+}
+
+.input-area{
+	width:100%;
+}
+
+.input-area-div{
+	text-align:center;
+}
+
+.input-area-div > p{
+	
+	margin: auto 2;
 }
