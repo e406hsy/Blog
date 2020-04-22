@@ -1,16 +1,28 @@
 
-body {
+html, body {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	height: 100vh;
 }
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,p{margin:0 0 1em}
 
 .app{
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	border: 0;
-	background-color: #717171;
+	background-color: #303030;
 	color: white;
 }
 

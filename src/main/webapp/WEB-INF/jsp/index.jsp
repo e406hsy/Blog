@@ -12,17 +12,17 @@
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 	<main class="app">
-		<form class="login-form" method="post">
+		<form class="login-form" method="post" action="/login">
 			<div class="input-area-div">
 				<p>아이디</p>
-				<input class="input-area" type="text" />
+				<input name='username'  id="username" class="input-area" type="text" />
 			</div>
 			<div  class="input-area-div">
 				<p>비밀번호</p>
-				<input class="input-area" type="password" />
+				<input name='password' id="password" class="input-area" type="password" />
 			</div>
-			<button>로그인</button>
-
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<button type="submit">로그인</button>
 		</form>
 	</main>
 </body>
