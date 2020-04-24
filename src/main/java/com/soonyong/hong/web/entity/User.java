@@ -1,14 +1,12 @@
 package com.soonyong.hong.web.entity;
 
 import javax.persistence.Column;
-import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-import com.soonyong.hong.web.util.RoleConverter;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +28,6 @@ public class User {
     @Column(name="allowed_yn")
     private boolean isAllow;
 
-    @Convert(converter = RoleConverter.class)
+    @Enumerated(EnumType.ORDINAL)
     private Role role;
 }
