@@ -3,6 +3,8 @@ package com.soonyong.hong.web.dto;
 import java.util.Arrays;
 import java.util.Collection;
 
+import com.soonyong.hong.web.entity.User;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,16 +13,23 @@ public class MyUserDetails implements UserDetails {
 
     private static final long serialVersionUID = -7451629221029861914L;
 
-    public String userName;
-    public String password;
+    private long id;
+    private String userName;
+    private String password;
+    private GrantedAuthority role;
+    private boolean enabled;
 
-    public MyUserDetails (String userName) {
-        this.userName = userName;
+    public MyUserDetails (User user) {
+        this.userName = user.getUserName();
+        this.password = user.getPassword();
+        this.id = user.getId();
+        this.role = new SimpleGrantedAuthority(user.getRole().name());
+        this.enabled = user.isAllow();
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority("USER"));
+        return Arrays.asList(role);
     }
 
     @Override
@@ -53,12 +62,11 @@ public class MyUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        // TODO Auto-generated method stub
-        return true;
+        return this.enabled;
     }
-
-	public void setPassword(String password) {
-        this.password = password;
-	}
+    
+    public long getId() {
+        return this.id;
+    }
 
 }

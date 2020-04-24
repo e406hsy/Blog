@@ -1,6 +1,8 @@
 package com.soonyong.hong.web;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.PropertySource;
 	"classpath:application.properties",
 	"classpath:db.properties"
 })
+@EnableAutoConfiguration
 public class Application {
 
 	public static void main(String[] args) {
