@@ -17,8 +17,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private long Id;
     @Column(name = "name")
@@ -30,4 +31,11 @@ public class User {
 
     @Enumerated(EnumType.ORDINAL)
     private Role role;
+
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+        this.isAllow = true;
+        this.role = Role.USER;
+    }
 }

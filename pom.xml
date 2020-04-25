@@ -7,7 +7,7 @@
 		<version>2.2.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.soonyong.hon.web</groupId>
+	<groupId>com.soonyong.hong.web</groupId>
 	<artifactId>web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>myWeb</name>
@@ -37,7 +37,6 @@
 		 <dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.4.14.Final</version>
 		 </dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -78,6 +77,12 @@
 			<version>edge-SNAPSHOT</version> <!--$NO-MVN-MAN-VER$ -->
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<repositories>

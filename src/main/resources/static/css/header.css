@@ -1,0 +1,38 @@
+header {
+	background-color: #F8B121;
+	padding: 0px;
+	text-align: center;
+	display: flex;
+	height: 55px;
+	position: relative;
+}
+
+#title {
+	padding-left: 16%;
+	
+	margin: auto auto;
+}
+
+header > * {
+	display: inline-block;
+	margin: 0px 0px;
+}
+
+#header_id_box {
+	height:100%;
+}
+
+.header_id {
+	height:100%;
+	margin: 0;
+	padding: 0 5px;
+	display:flex;/*CSS3*/
+	align-items:center;/*Vertical align*/
+	justify-content:center;/*horizontal align*/
+}
+
+.header_id > a {
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+}
