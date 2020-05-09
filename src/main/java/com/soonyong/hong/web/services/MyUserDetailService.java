@@ -1,8 +1,8 @@
 package com.soonyong.hong.web.services;
 
-import com.soonyong.hong.web.dto.MyUserDetails;
-import com.soonyong.hong.web.entity.User;
-import com.soonyong.hong.web.repository.UserRepository;
+import com.soonyong.hong.web.dao.UserDao;
+import com.soonyong.hong.web.model.MyUserDetails;
+import com.soonyong.hong.web.model.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,12 +14,12 @@ import org.springframework.stereotype.Service;
 public class MyUserDetailService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserDao userDao;
 
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUserName(username).orElseThrow(() -> new UsernameNotFoundException("failed to find user name : " + username));
+        User user = userDao.getUserByUserName(username).orElseThrow(() -> new UsernameNotFoundException("failed to find user name : " + username));
         
         MyUserDetails userDetail = new MyUserDetails(user);
 

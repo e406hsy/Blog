@@ -1,4 +1,4 @@
-package com.soonyong.hong.web.entity;
+package com.soonyong.hong.web.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

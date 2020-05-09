@@ -1,4 +1,4 @@
-package com.soonyong.hong.web.entity;
+package com.soonyong.hong.web.model;
 
 public enum Role {
     USER, ADMIN;
